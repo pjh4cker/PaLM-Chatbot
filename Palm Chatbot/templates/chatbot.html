@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaLM Bot</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="chatbot-container">
+        <div class="chat-header">
+            <h1 class="text-2xl">&#129302; PaLM Bot</h1>
+        </div>
+        <div class="chat-messages">
+            <div class="user-message">
+                <div>
+                    <p><strong>You: </strong>{{user_input}}</p>
+                </div>
+            </div>
+            <div class="bot-message">
+                <div class="mb-2">
+                    <strong>PaLM Bot: </strong>
+                </div>
+                <p>{{bot_response}}</p>
+            </div>
+        </div>
+        <div>
+            <form method="post" action="{{url_for('chatbot')}}" class="chat-input">
+                <input type="text" id="message" name="message" placeholder="Type your message..." class="flex-1"
+                    required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
